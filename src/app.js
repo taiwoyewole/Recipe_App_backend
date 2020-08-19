@@ -11,7 +11,7 @@ const recipeRouter = require('./routes/recipeRoute');
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json())
+app.use(express.json())
 
 const DB = process.env.DATABASE.replace(
     '<PASSWORD>',
