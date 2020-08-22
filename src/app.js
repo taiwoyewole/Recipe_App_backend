@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+const morgan = require('morgan');
 
 dotenv.config();
 const recipeRouter = require('./routes/recipeRoute');
@@ -12,6 +13,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json())
+app.use(morgan());
 
 const DB = process.env.DATABASE.replace(
     '<PASSWORD>',
